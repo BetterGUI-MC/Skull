@@ -1,12 +1,9 @@
 package me.hsgamer.bettergui.skull;
 
-import com.cryptomorin.xseries.SkullUtils;
 import me.hsgamer.bettergui.object.Icon;
 import me.hsgamer.bettergui.object.property.item.ItemProperty;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
-import org.bukkit.inventory.meta.SkullMeta;
 
 public class SkullItemProperty extends ItemProperty<String, String> {
 
@@ -23,10 +20,7 @@ public class SkullItemProperty extends ItemProperty<String, String> {
 
   @Override
   public ItemStack parse(Player player, ItemStack itemStack) {
-    ItemMeta itemMeta = itemStack.getItemMeta();
-    if (itemMeta instanceof SkullMeta) {
-      itemStack.setItemMeta(SkullUtils.applySkin(itemMeta, getParsed(player)));
-    }
+    itemStack.setItemMeta(SkullUtils.parseSkull(itemStack.getItemMeta(), getParsed(player)));
     return itemStack;
   }
 
