@@ -13,9 +13,7 @@ public class SkullItemProperty extends ItemProperty<String, String> {
 
   @Override
   public String getParsed(Player player) {
-    Icon icon = getIcon();
-    String value = getValue();
-    return icon.hasVariables(value) ? icon.setVariables(value, player) : value;
+    return parseFromString(getValue(), player);
   }
 
   @Override
