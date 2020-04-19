@@ -8,6 +8,8 @@ public final class Main extends Addon {
   @Override
   public boolean onLoad() {
     PropertyBuilder.registerItemProperty("head", SkullItemProperty.class);
+    PropertyBuilder.registerItemProperty("skull", SkullItemProperty.class);
+    PropertyBuilder.registerItemProperty("skull-owner", SkullItemProperty.class);
     return true;
   }
 }
