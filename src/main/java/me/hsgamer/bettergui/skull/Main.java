@@ -12,4 +12,9 @@ public final class Main extends Addon {
     PropertyBuilder.registerItemProperty("skull-owner", SkullItemProperty.class);
     return true;
   }
+
+  @Override
+  public void onDisable() {
+    NameFetcher.invalidateCache();
+  }
 }
